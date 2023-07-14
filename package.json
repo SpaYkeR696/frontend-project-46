@@ -1,0 +1,37 @@
+{
+  "bin": {
+    "gendiff": "./bin/gendiff.js"
+  },
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "gendiff",
+  "type": "module",
+  "main": "./frontend-project-46/src/genDiff.js",
+  "scripts": {
+    "test": "npx jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpaYkeR696/frontend-project-46.git"
+  },
+  "author": "Nikita Mescheriakov",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "comander": "^0.0.1-security",
+    "commander": "^11.0.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "fs": "^0.0.1-security",
+    "ini": "^4.1.1",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7",
+    "process": "^0.11.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.44.0",
+    "eslint-plugin-react": "^7.32.2",
+    "jest": "^29.6.1"
+  }
+}
