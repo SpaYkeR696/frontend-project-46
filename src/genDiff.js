@@ -1,71 +1,40 @@
 import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
+import { formats } from './utils/index.js';
+import { parse } from './parse.js';
 
-// eslint-disable-next-line import/prefer-default-export
-export const diffTree = (before, after) => {
-  const fileKeys = _.union(_.keys(before), _.keys(after));
-  const result = fileKeys.map((key) => {
-    if (!_.has(after, key)) {
-      return { key, status: 'deleted', value: before[key] };
+const compare = (data1, data2) => {
+  const keys1 = Object.keys(data1);
+  const keys2 = Object.keys(data2);
+  const sortedKey = _.sortBy(_.union(keys1, keys2));
+
+  const result = sortedKey.map((key) => {
+    if (_.isPlainObject(data1[key]) && _.isPlainObject(data2[key])) {
+      return { key, type: 'nested', children: compare(data1[key], data2[key]) };
     }
-    if (!_.has(before, key)) {
-      return { key, status: 'added', value: after[key] };
+    if (!Object.hasOwn(data1, key)) {
+      return { key, type: 'added', value: data2[key] };
     }
-    const oldValue = before[key];
-    const newValue = after[key];
-    if (oldValue === newValue) {
-      return { key, status: 'unmodified', value: oldValue };
+    if (!Object.hasOwn(data2, key)) {
+      return { key, type: 'deleted', value: data1[key] };
     }
-    if (_.isObject(oldValue) && _.isObject(newValue)) {
-      return { key, status: 'merged', children: diffTree(oldValue, newValue) };
+    if (!_.isEqual(data1[key], data2[key])) {
+      return {
+        key, type: 'changed', value1: data1[key], value2: data2[key],
+      };
     }
-    const node = {
-      key,
-      status: 'modified',
-      oldValue,
-      newValue,
-    };
-    return node;
+    return { key, type: 'unchanged', value: data1[key] };
   });
   return result;
 };
 
-const parse = (type, data) => {
-  switch (type) {
-    case 'json':
-      return JSON.parse(data);
-    default:
-      throw new Error(`Unknown data type! ${type} is not supported!`);
-  }
+const getData = (filePath) => {
+  const fileContent = fs.readFileSync(filePath, 'utf8').trim();
+  const fileName = path.extname(filePath).slice(1);
+  return parse(fileContent, fileName);
 };
 
-const render = (tree, format) => {
-  switch (format) {
-    case 'json':
-      return JSON.stringify(tree);
-    default:
-      return tree;
-  }
-};
-
-const fileData = (file) => {
-  const data = fs.readFileSync(path.resolve(file), 'utf-8');
-  const type = _.trim(path.extname(file), '.');
-  return { data, type };
-};
-
-const genDiff = (filePath1, filePath2, format) => {
-  const before = fileData(filePath1);
-  const after = fileData(filePath2);
-
-  const parseBefore = parse(before.type, before.data);
-  const parseAfter = parse(after.type, after.data);
-
-  const diff = diffTree(parseBefore, parseAfter);
-  const result = render(diff, format);
-
-  return result;
-};
+const genDiff = (filePath1, filePath2, format = 'styles') => formats(compare(getData(filePath1), getData(filePath2)), format);
 
 export default genDiff;
