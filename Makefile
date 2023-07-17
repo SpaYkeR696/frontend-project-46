@@ -5,6 +5,9 @@ build:
 	rm -rf dist
 	npm run build
 
+gendiff:
+	node /bin/gendiff.js
+
 publish:
 	npm publish --dry-run
 
