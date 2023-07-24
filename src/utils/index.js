@@ -1,7 +1,10 @@
 import styles from './style.js';
+import plain from './plain.js';
 
 const formats = (fileDiff, formatType) => {
   switch (formatType) {
+    case 'plain':
+      return (plain(fileDiff));
     case 'json':
       return JSON.stringify(fileDiff);
     case 'styles':
