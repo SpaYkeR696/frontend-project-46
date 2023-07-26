@@ -22,14 +22,14 @@ $ gendiff .\_tests_\_fixtures_\filepath1.json .\_tests_\_fixtures_\filepath2.yml
 
 #### Примеры выполнения с разными форматами 
 
-![screen1](/screenshots/screen1.jpg)
+![screen1](/frontend-project-46/screenshots/screen1.jpg)
 
-![screen2](/screenshots/screen2.jpg)
+![screen2](/frontend-project-46/screenshots/screen2.jpg)
 
-![screen3](/screenshots/screen3.jpg)
+![screen3](/frontend-project-46/screenshots/screen3.jpg)
 
-![screen4](/screenshots/screen4.jpg)
+![screen4](/frontend-project-46/screenshots/screen4.jpg)
 
-![screen5](/screenshots/screen5.jpg)
+![screen5](/frontend-project-46/screenshots/screen5.jpg)
 
-![screen6](/screenshots/screen6.jpg)
+![screen6](/frontend-project-46/screenshots/screen6.jpg)
