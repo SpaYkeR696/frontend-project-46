@@ -6,7 +6,7 @@ build:
 	npm run build
 
 gendiff:
-	node /bin/gendiff.js
+	node ./bin/gendiff.js
 
 publish:
 	npm publish --dry-run
