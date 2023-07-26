@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "description": "gendiff",
   "type": "module",
-  "main": "./frontend-project-46/src/genDiff.js",
+  "main": "./src/genDiff.js",
   "scripts": {
     "test": "npx jest"
   },
