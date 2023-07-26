@@ -1,4 +1,4 @@
-import styles from './style.js';
+import styles from './stylish.js';
 import plain from './plain.js';
 
 const formats = (fileDiff, formatType) => {
@@ -7,7 +7,7 @@ const formats = (fileDiff, formatType) => {
       return plain(fileDiff);
     case 'json':
       return JSON.stringify(fileDiff);
-    case 'styles':
+    case 'stylish':
       return styles(fileDiff);
     default:
       throw new Error(`Unknown format: ${formatType}`);
