@@ -35,6 +35,6 @@ const getData = (filePath) => {
   return parse(fileContent, fileName);
 };
 
-const genDiff = (filePath1, filePath2, format = 'styles') => formats(compare(getData(filePath1), getData(filePath2)), format);
+const genDiff = (filePath1, filePath2, format = 'stylish') => formats(compare(getData(filePath1), getData(filePath2)), format);
 
 export default genDiff;
