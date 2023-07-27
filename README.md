@@ -15,6 +15,20 @@
 1. имя приложения (gendiff)
 2. пути к файлам
 3. результирующий формат
+   
+## Установка
+
+```
+$ sudo npm link
+```
+
+## Флаги
+
+```
+$ -V версия
+$ -f --format выбор формата
+$ -h --help вывод доступных флагов
+```
 
 ```
 $ gendiff .\_tests_\_fixtures_\filepath1.json .\_tests_\_fixtures_\filepath2.yml
@@ -22,13 +36,19 @@ $ gendiff .\_tests_\_fixtures_\filepath1.json .\_tests_\_fixtures_\filepath2.yml
 
 #### Примеры выполнения с разными форматами 
 
+## Выполнение команды без форматов DEFAULT
+
 ![screen](/screenshots/screen1.jpg)
 
 ![screen](/screenshots/screen2.jpg)
 
+## Выпонение команды с форматом <<plain>>
+
 ![screen](/screenshots/screen3.jpg)
 
 ![screen](/screenshots/screen4.jpg)
+
+## Выпонение команды с форматом <<json>>
 
 ![screen](/screenshots/screen5.jpg)
 
