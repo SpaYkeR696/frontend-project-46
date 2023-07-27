@@ -10,6 +10,7 @@ const fixturePath = (file) => path.join(dirname, '..', '_tests_/_fixtures_', fil
 
 const resultExpect = (file) => fs.readFileSync(fixturePath(file), 'utf8').trim();
 
+// eslint-disable-next-line no-undef
 test.each([
   {
     file1: 'filepath1.json', file2: 'filepath2.json', format: undefined, expected: 'resultStyle.txt',
@@ -32,5 +33,6 @@ test.each([
 ])('compare', ({
   file1, file2, format, expected,
 }) => {
+  // eslint-disable-next-line no-undef
   expect(genDiff(fixturePath(file1), fixturePath(file2), format)).toBe(resultExpect(expected));
 });
