@@ -3,7 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 // eslint-disable-next-line import/no-unresolved
-import { genDiff } from '../index.js';
+import genDiff from '../index.js';
 
 const fileName = fileURLToPath(import.meta.url);
 const dirname = path.dirname(fileName);

@@ -17,5 +17,5 @@ const genDiff = (filePath1, filePath2, format = 'stylish') => {
   return stylish;
 };
 
-// formats(compare(getData(filePath1), getData(filePath2)), format);
+// eslint-disable-next-line import/prefer-default-export
 export default genDiff;
