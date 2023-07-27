@@ -29,26 +29,26 @@ $ -V версия
 $ -f --format выбор формата
 $ -h --help вывод доступных флагов
 ```
-
+## Пример ввода команды
 ```
 $ gendiff .\_tests_\_fixtures_\filepath1.json .\_tests_\_fixtures_\filepath2.yml
 ```
 
 #### Примеры выполнения с разными форматами 
 
-## Выполнение команды без форматов DEFAULT
+##### Выполнение команды без форматов default
 
 ![screen](/screenshots/screen1.jpg)
 
 ![screen](/screenshots/screen2.jpg)
 
-## Выпонение команды с форматом <<plain>>
+##### Выпонение команды с форматом plain
 
 ![screen](/screenshots/screen3.jpg)
 
 ![screen](/screenshots/screen4.jpg)
 
-## Выпонение команды с форматом <<json>>
+##### Выпонение команды с форматом json
 
 ![screen](/screenshots/screen5.jpg)
 
