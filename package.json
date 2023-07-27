@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "description": "Difference calculation files json, yaml, yml",
   "type": "module",
-  "main": "./src/genDiff.js",
+  "main": "index.js",
   "scripts": {
     "test": "npx jest"
   },
