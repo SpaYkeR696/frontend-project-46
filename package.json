@@ -4,7 +4,7 @@
   },
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "gendiff",
+  "description": "Difference calculation files json, yaml, yml",
   "type": "module",
   "main": "./src/genDiff.js",
   "scripts": {

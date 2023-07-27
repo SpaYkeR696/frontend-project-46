@@ -1,5 +1,4 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { test, expect } from '@jest/globals';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
