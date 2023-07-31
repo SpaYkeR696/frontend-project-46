@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { formats } from './utils/index.js';
+import { formats } from './formatter/index.js';
 import { parse } from './parse.js';
 import compare from './genDiff.js';
 
