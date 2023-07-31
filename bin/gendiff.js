@@ -2,7 +2,7 @@
 
 import { Command } from 'commander';
 // eslint-disable-next-line import/no-unresolved
-import process from 'commander-process';
+import process from 'process';
 import genDiff from '../index.js';
 
 const program = new Command();
